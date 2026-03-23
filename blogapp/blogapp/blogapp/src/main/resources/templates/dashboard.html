@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Dashboard</title>
+    <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+
+<h2>All Blogs</h2>
+
+<a href="/add">Add Blog</a>
+
+<div th:if="${blogs != null}">
+    <div th:each="b : ${blogs}">
+        <h3 th:text="${b.title}"></h3>
+        <p th:text="${b.content}"></p>
+    </div>
+</div>
+
+</body>
+</html>
